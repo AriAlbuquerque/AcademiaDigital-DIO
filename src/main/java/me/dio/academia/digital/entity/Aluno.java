@@ -18,21 +18,21 @@ import java.util.List;
 @Table(name = "tb_alunos")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Aluno {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  private String nome;
+    private String nome;
 
-  @Column(unique = true)
-  private String cpf;
+    @Column(unique = true)
+    private String cpf;
 
-  private String bairro;
+    private String bairro;
 
-  private LocalDate dataDeNascimento;
+    private LocalDate dataDeNascimento;
 
-  @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
-  @JsonIgnore
-  private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
+    @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
 
 }

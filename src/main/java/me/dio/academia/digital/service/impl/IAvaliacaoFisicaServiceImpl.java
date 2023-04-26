@@ -26,7 +26,6 @@ public class IAvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
     public AvaliacaoFisica create(AvaliacaoFisicaForm form) {
         AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica();
         alunoRepository.findAllById(Collections.singleton(form.getAlunoId()));
-
         avaliacaoFisica.setPeso(form.getPeso());
         avaliacaoFisica.setAltura(form.getAltura());
         return avaliacaoFisicaRepository.save(avaliacaoFisica);
